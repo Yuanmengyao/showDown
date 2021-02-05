@@ -1,0 +1,37 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1817723",
+      "name": "退出",
+      "font_class": "tuichu",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "3978025",
+      "name": "修改密码",
+      "font_class": "xiugaimima",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "13604677",
+      "name": "用户",
+      "font_class": "yonghu",
+      "unicode": "e65b",
+      "unicode_decimal": 58971
+    },
+    {
+      "icon_id": "17782768",
+      "name": "同步",
+      "font_class": "tongbu",
+      "unicode": "e88a",
+      "unicode_decimal": 59530
+    }
+  ]
+}

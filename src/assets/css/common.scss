@@ -1,0 +1,95 @@
+// flex布局
+@mixin displayflex {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+//flex 侧轴
+@mixin flex-align-center($item) {
+	-webkit-box-align: $item;
+	-webkit-align-items: $item;
+	-ms-flex-align: $item;
+	align-items: $item;
+}
+// flex主轴
+@mixin flex-justify-center($item) {
+	-webkit-box-pack: $item;
+	-webkit-justify-content: $item;
+	-ms-flex-pack: $item;
+	justify-content: $item;
+}
+//flex
+@mixin flex-num($num) {
+	-webkit-box-flex: $num;
+	-webkit-flex: $num;
+	-ms-flex: $num;
+	flex: $num;
+}
+
+@mixin flex-col {
+	-webkit-box-orient: vertical;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+@mixin flex-type($item1, $item2) {
+	@include displayflex;
+	@include flex-justify-center($item1);
+	@include flex-align-center($item2);
+}
+@mixin flex-wrap($item) {
+	flex-wrap: $item;
+}
+// 单行省略
+@mixin ellipsis {
+	overflow: hidden !important;
+	text-overflow: ellipsis !important;
+	white-space: nowrap !important;
+}
+
+// 多行省略
+@mixin ellipsisMore($row) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: $row;
+	-webkit-box-orient: vertical;
+}
+
+// 垂直居中
+@mixin verticalTransform {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	/* IE 9 */
+	-moz-transform: translateY(-50%);
+	/* Firefox */
+	-webkit-transform: translateY(-50%);
+	/* Safari 和 Chrome */
+	-o-transform: translateY(-50%);
+}
+//圆角效果
+@mixin radius($values: 2px) {
+	-moz-border-radius: $values;
+	-webkit-border-radius: $values;
+	border-radius: $values;
+}
+//阴影效果
+@mixin box-shadow($values) {
+	box-shadow: $values;
+	-webkit-box-shadow: $values;
+	-moz-box-shadow: $values;
+	-o-box-shadow: $values;
+}
+//不能选中
+@mixin no-select {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}

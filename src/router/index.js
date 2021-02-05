@@ -1,23 +1,54 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import ShutDown from 'views/shutDown'
+import Login from '../views/login.vue'
 
+const originalPush = VueRouter.prototype.push
+
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
-    component: Home
+    path: '/login',
+    name: 'Login',
+    component: Login
+  },
+
+  {
+    path: "/shutDown",
+    name: "ShutDown",
+    component: ShutDown
   },
   {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
+    path: "/channelManage",
+    name: "ChannelManage",
+    component: () => import('views/channelManage'),
+  },
+  {
+    path: "/operateRecord",
+    name: "OperateRecord",
+    component: () => import('views/operateRecord'),
+  },
+  {
+    path: "/userManage",
+    name: "UserManage",
+    component: () => import('views/userManage'),
+  },
+  {
+    path: '/',
+    redirect: {
+      name: 'ShutDown'
+    }
+  },
+  //  非法路由
+  {
+    path: '*',
+    redirect: {
+      name: 'ShutDown'
+    }
   }
 ];
 
